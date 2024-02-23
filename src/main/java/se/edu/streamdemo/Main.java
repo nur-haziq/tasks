@@ -14,15 +14,20 @@ public class Main {
 
         System.out.println("Printing all data ...");
         printAllData(tasksData);
+        printAllDataUsingStreams(tasksData);
 
         System.out.println("Printing deadlines ...");
         printDeadlines(tasksData);
+        printDeadlineUsingStreams(tasksData);
 
         System.out.println("Total number of deadlines: " + countDeadlines(tasksData));
+        System.out.println("Total number of deadlines: " + countDeadlinesUsingStream(tasksData));
+
 
     }
 
     private static int countDeadlines(ArrayList<Task> tasksData) {
+        System.out.println("Counting deadlines using iteration ...");
         int count = 0;
         for (Task t : tasksData) {
             if (t instanceof Deadline) {
